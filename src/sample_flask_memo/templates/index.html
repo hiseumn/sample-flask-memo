@@ -7,15 +7,17 @@
     <title>テストページ</title>
   </head>
   <body>
-    
+
     <div class="container text-center">
         <div class="row">
             <div class="col">
                 <div class="mb-3">
-                <form action="/" method="POST">
-                    <label for="exampleFormControlTextarea1" class="form-label">登録するメモ</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <button type="submit">送信</button>
+                <form action="/add" method="POST">
+                    <div class="mb-3 form-check">
+                      <label for="exampleFormControlTextarea1" class="form-label">登録するメモ</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" name="memo" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">送信</button>
                 </form>
                 </div>
             </div>
