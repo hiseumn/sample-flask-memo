@@ -22,5 +22,14 @@ jinja2==3.1.4
 markupsafe==2.1.5
     # via jinja2
     # via werkzeug
+psycopg==3.2.1
+    # via sample-flask-memo
+psycopg-binary==3.2.1
+    # via psycopg
+psycopg-pool==3.2.2
+    # via psycopg
+typing-extensions==4.12.2
+    # via psycopg
+    # via psycopg-pool
 werkzeug==3.0.3
     # via flask

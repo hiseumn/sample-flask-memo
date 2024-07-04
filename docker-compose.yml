@@ -1,0 +1,27 @@
+services:
+  flask:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src/sample_flask_memo:/app
+    depends_on:
+      - postgresql
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgresql/postgres
+  postgresql:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports: 
+      - "5432:5432"
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./for_develop/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - flask
